@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../features/cart/cartSlice';
-import useDocumentTitle from '../hooks/useDocumentTitle';
 import { PRODUCTS_ENDPOINT } from '../config/config';
+import { getEnhancedImage } from '../utils/imageMapper';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -22,7 +21,16 @@ const ProductDetail = () => {
           throw new Error('Failed to fetch product');
         }
         const data = await response.json();
-        setProduct(data);
+        
+        // Enhance single product image
+        const enhancedImage = getEnhancedImage(data.id);
+        const enhancedProduct = {
+          ...data,
+          thumbnail: enhancedImage || data.thumbnail,
+          images: enhancedImage ? [enhancedImage, ...data.images] : data.images
+        };
+
+        setProduct(enhancedProduct);
       } catch (err) {
         setError(err.message);
       } finally {

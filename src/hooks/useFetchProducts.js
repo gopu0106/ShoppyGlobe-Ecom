@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { PRODUCTS_ENDPOINT } from '../config/config';
 
+import { getEnhancedImage } from '../utils/imageMapper';
+
 const useFetchProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +16,18 @@ const useFetchProducts = () => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setProducts(data.products);
+        
+        // Enhance products with high-quality images
+        const enhancedProducts = data.products.map(product => {
+          const enhancedImage = getEnhancedImage(product.id);
+          return {
+            ...product,
+            thumbnail: enhancedImage || product.thumbnail,
+            images: enhancedImage ? [enhancedImage, ...product.images] : product.images
+          };
+        });
+        
+        setProducts(enhancedProducts);
       } catch (err) {
         setError(err.message);
       } finally {
