@@ -7,7 +7,7 @@
   --white: #ffffff;
   --gray: #ecf0f1;
   --border-radius: 8px;
-  --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow: 0 2px 5px rgba(0,0,0,0.1);
   --max-width: 1200px;
 }
 
@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -40,8 +40,7 @@ ul {
   min-height: 80vh;
 }
 
-.loading,
-.error {
+.loading, .error {
   text-align: center;
   padding: 50px;
   font-size: 1.2rem;
@@ -49,4 +48,38 @@ ul {
 
 .error {
   color: var(--accent-color);
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.header nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header nav a {
+  color: var(--gray);
+  transition: color 0.3s;
+}
+
+.header nav a:hover {
+  color: var(--white);
 }
