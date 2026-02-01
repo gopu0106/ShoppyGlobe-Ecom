@@ -1,67 +1,108 @@
 # ShoppyGlobe E-commerce Application
 
-ShoppyGlobe is a React-based e-commerce application built with Redux Toolkit and React Router. It allows users to browse products, view details, search, add items to a cart, and proceed to checkout.
+## 📝 Project Description
 
-## Tech Stack
+ShoppyGlobe is a React-based e-commerce application built with Redux Toolkit and React Router. It allows users to browse products, view details, search, add items to a cart, and proceed to checkout. This project demonstrates core React concepts including component architecture, state management, routing, and API integration.
 
-- **React 18**
-- **Vite**
-- **Redux Toolkit** (State Management)
-- **React Router DOM** (Routing)
-- **CSS** (Styling)
-- **DummyJSON API** (Data Source)
+## ⚡ Tech Stack
 
-## Features
+- **React 18** - UI library
+- **Vite** - Build tool
+- **Redux Toolkit** - State management
+- **React Router DOM** - Client-side routing
+- **CSS** - Styling (no frameworks)
+- **DummyJSON API** - Product data source
 
-- **Product Listing:** Fetch and display products with lazy loaded images.
-- **Search:** Filter products by title using Redux state.
-- **Product Detail:** View detailed information for a specific product.
-- **Cart Management:** Add, remove, and update quantities of items.
-- **Checkout:** Simple checkout form with cart clearance.
-- **Responsive Design:** Works on mobile and desktop.
-- **Performance:** Implements `React.lazy` and `Suspense` for code splitting.
+## ✨ Features
 
-## Setup Steps
+- **Product Listing** - Fetch and display products with lazy-loaded images
+- **Search Functionality** - Filter products by title using Redux state
+- **Product Detail Page** - View detailed information for specific products
+- **Cart Management** - Add, remove, and update item quantities
+- **Checkout Form** - Simple form with validation and cart clearance
+- **Responsive Design** - Works on mobile and desktop devices
+- **Performance Optimizations** - Code splitting with React.lazy and Suspense
+- **Error Handling** - Graceful handling of API failures and missing images
 
-1. **Clone the repository:**
+## 🛠️ Setup Instructions
 
-   ```bash
-   git clone https://github.com/gopu0106/ShoppyGlobe-Ecom.git
-   cd shoppyglobe
-   ```
+### 1. Clone the repository
 
-2. **Install dependencies:**
+```bash
+git clone https://github.com/gopu0106/ShoppyGlobe-Ecom.git
+cd ShoppyGlobe-Ecom/shoppyglobe
+```
 
-   ```bash
-   npm install
-   ```
+### 2. Install dependencies
 
-3. **Run the development server:**
+```bash
+npm install
+```
 
-   ```bash
-   npm run dev
-   ```
+### 3. Run the development server
 
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+```bash
+npm run dev
+```
 
-## Folder Structure
+The application will open at `http://localhost:5173`
+
+### 4. Build for production (optional)
+
+```bash
+npm run build
+```
+
+## 📁 Folder Structure
 
 ```
 shoppyglobe/
+├── public/               # Static assets
 ├── src/
-│   ├── app/ (Redux Store)
-│   ├── features/ (Redux Slices)
-│   ├── components/ (React Components)
-│   ├── hooks/ (Custom Hooks)
-│   ├── router/ (Router Configuration)
-│   ├── styles/ (CSS Files)
-│   ├── App.jsx
-│   └── main.jsx
+│   ├── app/             # Redux store configuration
+│   │   └── store.js
+│   ├── features/        # Redux slices
+│   │   └── cart/
+│   │       ├── cartSlice.js       # Cart state & actions
+│   │       └── cartSelectors.js   # Memoized selectors
+│   ├── components/      # React components
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── ProductList.jsx
+│   │   ├── ProductItem.jsx
+│   │   ├── ProductDetail.jsx
+│   │   ├── Cart.jsx
+│   │   ├── CartItem.jsx
+│   │   ├── Checkout.jsx
+│   │   ├── NotFound.jsx
+│   │   └── Layout.jsx
+│   ├── hooks/           # Custom hooks
+│   │   ├── useFetchProducts.js
+│   │   └── useDocumentTitle.js
+│   ├── router/          # Route configuration
+│   │   └── router.jsx
+│   ├── styles/          # CSS files
+│   │   └── main.css
+│   ├── config/          # App configuration
+│   │   └── config.js
+│   ├── App.jsx          # Main app component
+│   └── main.jsx         # Entry point
+├── .gitignore
+├── package.json
+├── vite.config.js
+└── README.md
 ```
 
-## GitHub Repository
+## 🔗 GitHub Repository
 
-[https://github.com/gopu0106/ShoppyGlobe-Ecom.git](https://github.com/gopu0106/ShoppyGlobe-Ecom.git)
+**Repository URL:** [https://github.com/gopu0106/ShoppyGlobe-Ecom.git](https://github.com/gopu0106/ShoppyGlobe-Ecom.git)
+
+## 👨‍💻 Developer
+
+- **Name:** Gopal Ramesh Tengale
+- **Project:** ShoppyGlobe E-commerce Application
+- **Built With:** React, Redux, Vite
+
+---
+
+**© 2024 ShoppyGlobe. All rights reserved.**
