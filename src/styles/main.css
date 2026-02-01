@@ -230,6 +230,7 @@ ul {
   color: var(--text-primary);
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2; /* Standard property */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -623,4 +624,20 @@ ul {
 .home-link:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
+}
+
+/* Footer Styles */
+.footer {
+  text-align: center;
+  padding: 32px;
+  margin-top: auto;
+  background-color: var(--secondary-color);
+  color: var(--text-secondary); /* Softer than pure white */
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.footer p {
+  opacity: 0.8;
+  color: var(--background-color);
 }
