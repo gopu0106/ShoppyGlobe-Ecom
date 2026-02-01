@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { addToCart } from '../features/cart/cartSlice';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import { PRODUCTS_ENDPOINT } from '../config/config';
 import { getEnhancedImage } from '../utils/imageMapper';
 
@@ -23,7 +25,7 @@ const ProductDetail = () => {
         const data = await response.json();
         
         // Enhance single product image
-        const enhancedImage = getEnhancedImage(data.id);
+        const enhancedImage = getEnhancedImage(data.id, data.category);
         const enhancedProduct = {
           ...data,
           thumbnail: enhancedImage || data.thumbnail,

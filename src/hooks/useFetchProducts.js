@@ -19,7 +19,7 @@ const useFetchProducts = () => {
         
         // Enhance products with high-quality images
         const enhancedProducts = data.products.map(product => {
-          const enhancedImage = getEnhancedImage(product.id);
+          const enhancedImage = getEnhancedImage(product.id, product.category);
           return {
             ...product,
             thumbnail: enhancedImage || product.thumbnail,
