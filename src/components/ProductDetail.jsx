@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../features/cart/cartSlice';
 import useDocumentTitle from '../hooks/useDocumentTitle';
+import { PRODUCTS_ENDPOINT } from '../config/config';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`https://dummyjson.com/products/${id}`);
+        const response = await fetch(`${PRODUCTS_ENDPOINT}/${id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch product');
         }

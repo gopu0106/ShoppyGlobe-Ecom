@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { PRODUCTS_ENDPOINT } from '../config/config';
 
 const useFetchProducts = () => {
   const [products, setProducts] = useState([]);
@@ -8,7 +9,7 @@ const useFetchProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://dummyjson.com/products');
+        const response = await fetch(PRODUCTS_ENDPOINT);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
