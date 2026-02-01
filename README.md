@@ -1,10 +1,10 @@
 # ShoppyGlobe E-commerce Application
 
-## 📝 Project Description
+## Project Description
 
 ShoppyGlobe is a React-based e-commerce application built with Redux Toolkit and React Router. It allows users to browse products, view details, search, add items to a cart, and proceed to checkout. This project demonstrates core React concepts including component architecture, state management, routing, and API integration.
 
-## ⚡ Tech Stack
+## Tech Stack
 
 - **React 18** - UI library
 - **Vite** - Build tool
@@ -13,7 +13,7 @@ ShoppyGlobe is a React-based e-commerce application built with Redux Toolkit and
 - **CSS** - Styling (no frameworks)
 - **DummyJSON API** - Product data source
 
-## ✨ Features
+## Features
 
 - **Product Listing** - Fetch and display products with lazy-loaded images
 - **Search Functionality** - Filter products by title using Redux state
@@ -24,7 +24,7 @@ ShoppyGlobe is a React-based e-commerce application built with Redux Toolkit and
 - **Performance Optimizations** - Code splitting with React.lazy and Suspense
 - **Error Handling** - Graceful handling of API failures and missing images
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the repository
 
@@ -93,11 +93,11 @@ shoppyglobe/
 └── README.md
 ```
 
-## 🔗 GitHub Repository
+## GitHub Repository
 
 **Repository URL:** [https://github.com/gopu0106/ShoppyGlobe-Ecom.git](https://github.com/gopu0106/ShoppyGlobe-Ecom.git)
 
-## 👨‍💻 Developer
+## Developer
 
 - **Name:** Gopal Ramesh Tengale
 - **Project:** ShoppyGlobe E-commerce Application
