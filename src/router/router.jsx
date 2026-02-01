@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
 import App from '../App';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { Outlet } from 'react-router-dom';
 
 // Lazy load components
@@ -21,6 +22,7 @@ const Layout = () => {
           <Outlet />
         </Suspense>
       </main>
+      <Footer />
     </>
   );
 };
