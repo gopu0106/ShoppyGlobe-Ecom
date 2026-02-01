@@ -20,6 +20,7 @@ const ProductItem = ({ product }) => {
           alt={product.title} 
           loading="lazy" 
           className="product-image"
+          onError={(e) => { e.target.src = 'https://via.placeholder.com/200?text=No+Image'; }}
         />
         <div className="product-info">
           <h3>{product.title}</h3>
