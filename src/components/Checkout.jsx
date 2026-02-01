@@ -28,32 +28,38 @@ const Checkout = () => {
       <h2>Checkout</h2>
       <form onSubmit={handleSubmit} className="checkout-form">
         <div className="form-group">
-          <label>Name:</label>
+          <label htmlFor="name">Name:</label>
           <input 
             type="text" 
+            id="name"
             name="name" 
             value={formData.name} 
             onChange={handleChange} 
             required 
+            aria-label="Full Name"
           />
         </div>
         <div className="form-group">
-          <label>Email:</label>
+          <label htmlFor="email">Email:</label>
           <input 
             type="email" 
+            id="email"
             name="email" 
             value={formData.email} 
             onChange={handleChange} 
             required 
+            aria-label="Email Address"
           />
         </div>
         <div className="form-group">
-          <label>Address:</label>
+          <label htmlFor="address">Address:</label>
           <textarea 
+            id="address"
             name="address" 
             value={formData.address} 
             onChange={handleChange} 
             required 
+            aria-label="Shipping Address"
           />
         </div>
         <button type="submit" className="place-order-btn">Place Order</button>
