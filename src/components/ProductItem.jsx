@@ -4,9 +4,11 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../features/cart/cartSlice';
 
+// ProductItem component - displays a single product card
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
 
+  // Add product to cart and prevent link navigation
   const handleAddToCart = (e) => {
     e.preventDefault();
     dispatch(addToCart(product));
@@ -18,7 +20,7 @@ const ProductItem = ({ product }) => {
         <img 
           src={product.thumbnail} 
           alt={product.title} 
-          loading="lazy" 
+          loading="lazy" // Lazy load images for better performance
           className="product-image"
           onError={(e) => { e.target.src = 'https://via.placeholder.com/200?text=No+Image'; }}
         />
@@ -32,6 +34,7 @@ const ProductItem = ({ product }) => {
   );
 };
 
+// PropTypes for type checking (helps catch bugs)
 ProductItem.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number.isRequired,

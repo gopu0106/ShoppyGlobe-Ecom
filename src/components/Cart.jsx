@@ -5,12 +5,16 @@ import { selectCartItems, selectCartTotalPrice } from '../features/cart/cartSele
 import { clearCart } from '../features/cart/cartSlice';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 
+// Cart component - displays cart items and checkout option
 const Cart = () => {
   useDocumentTitle('Cart');
   const dispatch = useDispatch();
+  
+  // Get cart data from Redux store
   const cartItems = useSelector(selectCartItems);
   const totalPrice = useSelector(selectCartTotalPrice);
 
+  // Show empty cart message if no items
   if (cartItems.length === 0) {
     return (
       <div className="empty-cart">
@@ -24,12 +28,14 @@ const Cart = () => {
     <div className="cart-container">
       <h2>Shopping Cart</h2>
       <div className="cart-items">
+        {/* Render each cart item */}
         {cartItems.map((item) => (
           <CartItem key={item.id} item={item} />
         ))}
       </div>
       <div className="cart-summary">
         <h3>Total: ${totalPrice.toFixed(2)}</h3>
+        {/* Clear cart button with confirmation */}
         <button 
           className="clear-cart-btn"
           onClick={() => {
