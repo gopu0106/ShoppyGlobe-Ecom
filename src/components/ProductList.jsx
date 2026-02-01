@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from './ProductItem';
 import useFetchProducts from '../hooks/useFetchProducts';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 import { setSearchQuery } from '../features/cart/cartSlice';
 import { selectSearchQuery } from '../features/cart/cartSelectors';
 
 const ProductList = () => {
+  useDocumentTitle('Home');
   const { products, loading, error } = useFetchProducts();
   const dispatch = useDispatch();
   const searchQuery = useSelector(selectSearchQuery);

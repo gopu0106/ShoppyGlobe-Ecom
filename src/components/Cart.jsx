@@ -3,8 +3,10 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
 import { selectCartItems, selectCartTotalPrice } from '../features/cart/cartSelectors';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 const Cart = () => {
+  useDocumentTitle('Cart');
   const cartItems = useSelector(selectCartItems);
   const totalPrice = useSelector(selectCartTotalPrice);
 
