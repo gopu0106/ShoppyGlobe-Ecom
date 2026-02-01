@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../features/cart/cartSlice';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -9,6 +10,8 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
+
+  useDocumentTitle(product ? product.title : 'Product Detail');
 
   useEffect(() => {
     const fetchProduct = async () => {
