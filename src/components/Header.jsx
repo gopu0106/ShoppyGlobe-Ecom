@@ -12,9 +12,10 @@ const Header = () => {
         <Link to="/">ShoppyGlobe</Link>
       </div>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/cart">
-          Cart ({cartItemCount})
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/cart" className="nav-link cart-link">
+          <span>Cart</span>
+          <span className="cart-badge">{cartItemCount}</span>
         </Link>
       </nav>
     </header>

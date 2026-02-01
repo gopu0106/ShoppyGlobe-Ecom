@@ -1,14 +1,25 @@
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2c3e50;
-  --accent-color: #e74c3c;
-  --background-color: #f4f4f9;
-  --text-color: #333;
+  /* Premium, Trustworthy Palette */
+  --primary-color: #2563eb; /* Royal Blue */
+  --primary-hover: #1d4ed8;
+  --secondary-color: #1e293b; /* Slate 800 */
+  --accent-color: #ef4444; /* Red 500 */
+  --background-color: #f8fafc; /* Slate 50 */
+  --card-bg: #ffffff;
+  --text-primary: #0f172a; /* Slate 900 */
+  --text-secondary: #64748b; /* Slate 500 */
+  --border-color: #e2e8f0; /* Slate 200 */
   --white: #ffffff;
   --gray: #ecf0f1;
-  --border-radius: 8px;
-  --shadow: 0 2px 5px rgba(0,0,0,0.1);
+  
+  /* Spacing & Layout */
+  --border-radius: 12px;
+  --radius-sm: 6px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --max-width: 1200px;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -18,10 +29,12 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--text-primary);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -52,36 +65,73 @@ ul {
 
 /* Header Styles */
 .header {
-  background-color: var(--secondary-color);
-  color: var(--white);
-  padding: 1rem 2rem;
+  background-color: var(--white);
+  color: var(--text-primary);
+  height: 80px;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header .logo a {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--white);
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
 }
 
 .header nav {
   display: flex;
-  gap: 20px;
+  gap: 32px;
+  align-items: center;
 }
 
-.header nav a {
-  color: var(--gray);
-  transition: color 0.3s;
+.nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: var(--transition);
+  position: relative;
 }
 
-.header nav a:hover {
-  color: var(--white);
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--background-color);
+  padding: 8px 16px;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+
+.cart-link:hover {
+  background-color: #e0e7ff;
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.cart-badge {
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  height: 20px;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 0 6px;
 }
 
 /* Product List Styles */
